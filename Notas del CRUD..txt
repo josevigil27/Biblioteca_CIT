@@ -1,0 +1,21 @@
+El CRUD fue desarrollado utilizando un framework personalizado basado en Laravel, el cual aprendí en un curso de Desarrollo Web en UDEMY. Este framework emplea el patrón MVC. Para el diseño de la interfaz, utilicé una plantilla gratuita admin de Bootstrap, la cual personalicé con CSS, basado en uno de los proyectos del curso y gestionado con SASS.
+
+NOTA: Para importar los archivos de la BD, Workbench solo me exporto las tablas, primero hay que crear la
+Base de Datos y luego importar los archivos de la tabla.
+
+NOMBRE DE LA BASE DE DATOS : biblioteca_cit
+
+Credenciales
+Ruta de las credenciales: includes/.env
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=root
+DB_NAME=biblioteca_cit
+
+correo: correo@correo.com
+pass: 123456
+
+Como inicializarlo:
+Después de descargar el repositorio y configurar la base de datos, abra una consola dentro del directorio del repositorio. Una vez en la consola, ejecute el comando "php -S localhost:3000" para iniciar la aplicación.
+

@@ -1,0 +1,89 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    &__fieldset {
+        border: none;
+        margin-top: 10px;
+        padding: 0;
+    }
+    &__legend {
+        color: v.$gris;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    &__campo {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    &__contenedor-icono {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    &__icono {
+        background-color: v.$gris-oscuro;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: v.$blanco;
+            font-size: 20px;
+        }
+    }
+    &__label {
+        display: block;
+        font-size: 18px;
+        color: rgba(v.$negro, .8);
+    }
+    &__input,
+    &__select {
+        padding: 10px;
+        border: 1px solid darken(v.$gris-claro, 20);
+        border-radius: 5px;
+
+        &--file {
+            border: none;
+        }
+        &--sociales {
+            @extend .formulario__input;
+            flex: 1;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__radio{
+        display: flex;
+        gap: 20px;
+    }
+
+    &__texto {
+        margin-top: 30px;
+    }
+    &__imagen {
+        max-width: 200px;
+    }
+
+    &__listado {
+        @include m.tags;
+    }
+
+    &__submit {
+        @include m.boton(v.$azul, v.$blanco);
+        width: auto;
+        align-self: flex-start;
+
+        &--registrar,
+        &--full {
+            width: 100%;
+        }
+    }
+}

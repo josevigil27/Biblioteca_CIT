@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+
+    &--centrar {
+        @extend .acciones;
+        justify-content: center;
+    }
+
+    &__enlace {
+        color: v.$negro;
+        font-size: 14px;
+        font-weight: v.$delgada;
+    }
+}

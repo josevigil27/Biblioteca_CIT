@@ -1,0 +1,164 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.dashboard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: v.$gris-claro;
+
+    &__header {
+        background-color: v.$gris-oscuro;
+        padding: 20px;
+    }
+    &__header-grid {
+        display: flex;
+        flex-direction: column;
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__logo {
+        @include m.logo;
+        @include m.texto-fluido(20px, 30px);
+    }
+
+    &__nav {
+
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__submit--logout {
+        @include m.enlace;
+    }
+
+    &__grid {
+        display: flex;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    &__sidebar {
+        background-color: lighten(v.$gris-oscuro, 10);
+        width: 120px;
+    }
+
+    &__menu {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__enlace {
+        color: lighten(v.$gris-oscuro, 40);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;
+
+        &:hover,
+        &--actual {
+            background-color: lighten(v.$gris-oscuro, 20);
+            color: v.$blanco;
+            border-radius: 10px;
+        }
+    }
+    &__icono {
+        font-size: 20px;
+    }
+    &__menu-texto {
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: v.$bold;
+        margin-top: 5px;
+    }
+
+    &__contenido {
+        width: 100%;
+        padding: 10px 10px 30px 10px;
+        overflow-y: scroll;
+        @include m.tablet {
+            padding: 10px 50px 30px 50px;
+        }
+    }
+
+    &__contenedor-boton {
+        @include m.tablet {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 50px;
+        }
+    }
+    &__boton {
+        @include m.boton(v.$azul, v.$blanco);
+        text-transform: uppercase;
+        font-size: 14px;
+        @include m.tablet {
+            width: auto;
+        }
+        &:hover {
+            background-color: darken(v.$azul, 10);
+            color: v.$blanco;
+        }
+    }
+    &__boton-success {
+        @include m.boton(v.$verde, v.$blanco);
+        text-transform: uppercase;
+        font-size: 14px;
+        @include m.tablet {
+            width: auto;
+        }
+        &:hover {
+            background-color: darken(v.$verde, 10);
+            color: v.$blanco;
+        }
+    }
+    &__boton-warning {
+        @include m.boton(v.$secundario, v.$blanco);
+        text-transform: uppercase;
+        font-size: 14px;
+        @include m.tablet {
+            width: auto;
+        }
+        &:hover {
+            background-color: darken(v.$secundario, 10);
+            color: v.$blanco;
+        }
+    }
+    &__boton-danger {
+        @include m.boton(v.$rojo, v.$blanco);
+        text-transform: uppercase;
+        font-size: 14px;
+        @include m.tablet {
+            width: auto;
+        }
+        &:hover {
+            background-color: darken(v.$rojo, 10);
+            color: v.$blanco;
+        }
+    }
+
+    &__contenedor {
+        @include m.shadow;
+        background-color: v.$blanco;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    &__formulario {
+        @extend .dashboard__contenedor;
+        @include m.contenedor-md;
+    }
+
+    &__grafica {
+        @include m.contenedor-sm;
+    }
+}

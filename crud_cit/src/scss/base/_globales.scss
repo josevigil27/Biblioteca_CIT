@@ -1,0 +1,18 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+body {
+    font-family: v.$fuente_principal;
+    font-size: 18px;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+.swal2-popup {
+    font-size: 20px!important;
+}
